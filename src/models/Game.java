@@ -182,8 +182,13 @@ public abstract class Game {
 	 *            adds the move if it could be made
 	 */
 	public boolean addMove(Move m) {
-		// Idk if this is optimal
-		return makeMove(m) ? moves.add(m) : false;
+		if (makeMove(m)) {
+			moves.add(m);
+			hasEnded();
+			onTurnChanged(turn);
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -208,8 +213,6 @@ public abstract class Game {
 		// If it's the last move of the turn or there are no restricted
 		// moves
 		if (move.isEnd()) {
-			hasEnded();
-
 			// Change the turn when the move is made
 			turn = 1 - turn;
 			restricted = false;
@@ -223,13 +226,11 @@ public abstract class Game {
 
 			// If there are no more moves, end the turn
 			if (getAvailableMovesRestricted().size() == 0) {
-				hasEnded();
 				restricted = false;
 				turn = 1 - turn;
 			}
 		}
 
-		onTurnChanged(turn);
 		return true;
 	}
 

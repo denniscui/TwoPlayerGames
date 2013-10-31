@@ -29,6 +29,15 @@ public class TTTBoardView extends BoardView {
 
 	public TTTBoardView(Context context) {
 		super(context);
+
+		mProgressDialog = new ProgressDialog(getContext());
+	}
+
+	public TTTBoardView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+
+		mProgressDialog = new ProgressDialog(getContext());
+		// TODO Auto-generated constructor stub
 	}
 
 	public TTTBoardView(Context context, AttributeSet attrs, int player) {

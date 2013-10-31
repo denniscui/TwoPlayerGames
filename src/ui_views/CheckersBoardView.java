@@ -561,6 +561,12 @@ public class CheckersBoardView extends View {
 		if (heightMode == MeasureSpec.AT_MOST && height > heightSize)
 			height = heightSize;
 
+		// Turn it into a square
+		int square = Math.min(height, width);
+
+		width = square;
+		height = square;
+
 		mCellWidth = (width - getPaddingLeft() - getPaddingRight())
 				/ ((float) mGame.getRules().getCols());
 

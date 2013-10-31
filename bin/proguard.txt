@@ -1,0 +1,24 @@
+# view AndroidManifest.xml #generated:36
+-keep class com.dcmobile.tpgames.Checkers { <init>(...); }
+
+# view AndroidManifest.xml #generated:41
+-keep class com.dcmobile.tpgames.Chess { <init>(...); }
+
+# view AndroidManifest.xml #generated:31
+-keep class com.dcmobile.tpgames.Connect4 { <init>(...); }
+
+# view AndroidManifest.xml #generated:16
+-keep class com.dcmobile.tpgames.SplashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:26
+-keep class com.dcmobile.tpgames.TicTacToe { <init>(...); }
+
+# view res/layout/activity_tic_tac_toe.xml #generated:11
+-keep class ui_views.TTTBoardView { <init>(...); }
+
+# onClick res/layout/activity_games.xml #generated:136
+# onClick res/layout/activity_games.xml #generated:168
+# onClick res/layout/activity_games.xml #generated:60
+# onClick res/layout/activity_games.xml #generated:93
+-keepclassmembers class * { *** loadGame(...); }
+

@@ -60,8 +60,12 @@ public abstract class BoardView extends View {
 		super(context);
 	}
 
-	public BoardView(Context context, AttributeSet attrs, int player) {
+	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+	}
+
+	public BoardView(Context context, AttributeSet attrs, int player) {
+		this(context, attrs);
 
 		// setup the player
 		this.player = player;
@@ -285,11 +289,15 @@ public abstract class BoardView extends View {
 		if (heightMode == MeasureSpec.AT_MOST && height > heightSize)
 			height = heightSize;
 
-		mCellWidth = (width - getPaddingLeft() - getPaddingRight())
-				/ ((float) mGame.getRules().getCols());
+		// Turn it into a square
+		int square = Math.min(height, width);
 
-		mCellHeight = (height - getPaddingLeft() - getPaddingRight())
-				/ ((float) mGame.getRules().getRows());
+		width = square;
+		height = square;
+
+		mCellWidth = (width - getPaddingLeft() - getPaddingRight()) / 3.0f;
+
+		mCellHeight = (height - getPaddingLeft() - getPaddingRight()) / 3.0f;
 
 		// After we have these values, set the default images
 		setImages(mCellWidth, mCellHeight);
@@ -300,7 +308,6 @@ public abstract class BoardView extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
-
 		// Why do we only subtract half the padding?
 		int width = getWidth() - getPaddingRight();
 		int height = getHeight() - getPaddingBottom();

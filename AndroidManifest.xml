@@ -26,22 +26,22 @@
         <activity
             android:name="com.dcmobile.tpgames.TicTacToe"
             android:label="TicTacToe"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.dcmobile.tpgames.Connect4"
             android:label="Connect Four"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.dcmobile.tpgames.Checkers"
             android:label="Checkers"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.dcmobile.tpgames.Chess"
             android:label="Chess"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
